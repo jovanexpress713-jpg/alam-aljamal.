@@ -50,11 +50,11 @@ export const HomeView: React.FC = () => {
   const ArrowIcon = lang === 'ar' ? ArrowLeft : ArrowRight;
 
   return (
-    <div className="pb-24 sm:pb-32 space-y-12 sm:space-y-20 overflow-x-hidden">
+    <div className="pb-24 sm:pb-32 space-y-10 sm:space-y-20 overflow-x-hidden alam-mobile-shell">
       {/* HERO BANNER SECTION */}
-      <section className="relative min-h-[80vh] sm:min-h-[85vh] flex items-center justify-center overflow-hidden px-4 sm:px-6">
+      <section className="relative min-h-[66vh] sm:min-h-[78vh] flex items-center justify-center overflow-hidden px-4 sm:px-6 border-b border-[#D7AD55]/15">
         {/* Background Image with dramatic gradient vignette */}
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0">\n          <div className="alam-hero-glow top-[-8%] left-1/2 -translate-x-1/2" />
           <img
             src="https://images.unsplash.com/photo-1594035910387-fea47794261f?w=1800&q=90"
             alt="عالم الجمال الفاخر"
@@ -194,7 +194,7 @@ export const HomeView: React.FC = () => {
                 setSelectedCategory(cat.id);
                 setCurrentTab('products');
               }}
-              className="group relative h-40 sm:h-48 rounded-2xl overflow-hidden border border-[#D7AD55]/20 hover:border-[#D7AD55] transition-all text-start flex flex-col justify-end p-3 sm:p-4 text-white"
+              className="alam-category-card group relative h-36 sm:h-48 rounded-2xl overflow-hidden border border-[#D7AD55]/25 hover:border-[#F4D98E] transition-all text-start flex flex-col justify-end p-3 sm:p-4 text-white bg-[#111]"
             >
               <img
                 src={cat.imageUrl}

@@ -44,6 +44,11 @@ const AppContent: React.FC = () => {
       {/* Mobile PWA Install Banner */}
       <PWAInstallBanner />
 
+      {/* Explicitly label demo data for client presentations */}
+      <div className="bg-[#D7AD55] text-[#080808] text-center px-3 py-1.5 text-[10px] sm:text-xs font-semibold tracking-wide">
+        نسخة عرض تجريبية — الصور فوتوغرافية توضيحية، والمنتجات والأسعار والمخزون بيانات نموذجية قابلة للتغيير
+      </div>
+
       {/* Splash Screen */}
       {showSplash && <SplashScreen onFinish={() => setShowSplash(false)} />}
 

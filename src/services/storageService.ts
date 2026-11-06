@@ -182,7 +182,7 @@ class StorageService {
 
   // Orders
   getOrders(): Order[] {
-    return this.get<Order[]>(STORAGE_KEYS.ORDERS, INITIAL_ORDERS);
+    return this.get<Order[]>(STORAGE_KEYS.ORDERS, []);
   }
 
   saveOrders(orders: Order[]): void {
@@ -191,7 +191,7 @@ class StorageService {
 
   // User
   getUser(): UserProfile | null {
-    return this.get<UserProfile | null>(STORAGE_KEYS.USER, DEFAULT_USER);
+    return this.get<UserProfile | null>(STORAGE_KEYS.USER, null);
   }
 
   saveUser(user: UserProfile | null): void {
@@ -200,7 +200,7 @@ class StorageService {
 
   // Addresses
   getAddresses(): Address[] {
-    return this.get<Address[]>(STORAGE_KEYS.ADDRESSES, DEFAULT_ADDRESSES);
+    return this.get<Address[]>(STORAGE_KEYS.ADDRESSES, []);
   }
 
   saveAddresses(addresses: Address[]): void {
@@ -209,7 +209,7 @@ class StorageService {
 
   // Wishlist
   getWishlist(): string[] {
-    return this.get<string[]>(STORAGE_KEYS.WISHLIST, ['prod-royal-amber', 'prod-luxury-chronograph']);
+    return this.get<string[]>(STORAGE_KEYS.WISHLIST, []);
   }
 
   saveWishlist(ids: string[]): void {

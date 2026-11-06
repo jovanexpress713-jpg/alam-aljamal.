@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">ALAM ALJAMAL</string>
+    <string name="title_activity_main">ALAM ALJAMAL</string>
+    <string name="package_name">com.alamaljamal.app</string>
+    <string name="custom_url_scheme">com.alamaljamal.app</string>
+</resources>

@@ -1,0 +1,10 @@
+{
+	"appId": "com.alamaljamal.app",
+	"appName": "ALAM ALJAMAL",
+	"webDir": "dist",
+	"server": {
+		"androidScheme": "https",
+		"cleartext": true
+	},
+	"android": {}
+}

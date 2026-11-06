@@ -123,23 +123,23 @@ export const HomeView: React.FC = () => {
           {[
             {
               icon: Award,
-              title: t('أصالة ملكية 100%', '100% Authentic'),
-              desc: t('جميع المنتجات أصلية مع شهادات ضمان', 'Direct from authentic European ateliers')
+              title: t('اختيارات متنوعة', 'Curated Selection'),
+              desc: t('تشكيلة واسعة تناسب اهتمامات مختلفة', 'A considered range for different interests')
             },
             {
               icon: Truck,
-              title: t('توصيل أسطول VIP', 'VIP White Glove Delivery'),
-              desc: t('شحن سريع خلال 24 ساعة بعناية تامة', 'Express temperature-controlled dispatch')
+              title: t('تصفح مريح', 'Effortless Browsing'),
+              desc: t('انتقل بسهولة بين الأقسام والمنتجات', 'Move easily between categories and products')
             },
             {
               icon: ShieldCheck,
-              title: t('الضمان الذهبي', 'Golden Guarantee'),
-              desc: t('استرجاع واستبدال فوري بكل مرونة', 'Hassle-free luxury exchange policy')
+              title: t('تفاصيل المنتج', 'Product Details'),
+              desc: t('صور ومعلومات وأسعار في مكان واحد', 'Images, information and pricing in one place')
             },
             {
               icon: RotateCcw,
-              title: t('تغليف إهداء راقٍ', 'Luxury Gift Presentation'),
-              desc: t('صناديق مبطنة بالحرير وشريط مذهب', 'Bespoke silk-lined boxes with wax seal')
+              title: t('قائمة المفضلة', 'Your Wishlist'),
+              desc: t('احفظ المنتجات التي ترغب بالعودة إليها', 'Save products you would like to revisit')
             }
           ].map((item, idx) => {
             const Icon = item.icon;

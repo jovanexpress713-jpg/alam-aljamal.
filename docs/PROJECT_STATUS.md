@@ -17,3 +17,8 @@
 
 ## مبدأ التسليم
 لا تعتبر البيانات المعروضة في الواجهة بيانات تجارية حقيقية، ولا تعتبر وظائف الدفع أو الطلبات متاحة قبل ربطها واختبارها.
+
+
+## CI verification
+- First workflow attempt failed before dependency installation because setup-node npm caching requires a lockfile that has not been generated yet.
+- Workflow corrected to install dependencies without cache; a fresh run will verify TypeScript and production build.

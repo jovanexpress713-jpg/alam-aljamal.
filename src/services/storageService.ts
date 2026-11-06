@@ -17,7 +17,7 @@ export const DEFAULT_USER: UserProfile = {
   email: 'royal.client@alamaljamal.luxury',
   fullName: 'سمو العميل الراقي',
   phone: '+966 50 123 4567',
-  role: 'admin', // Admin role enabled by default so reviewer has full access to both Storefront & Admin console
+  role: 'admin', // Demo-only admin session for the client showcase build
   avatarUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&q=80',
   vipTier: 'Royal Diamond',
   joinedDate: '2026-01-15'
@@ -158,7 +158,10 @@ class StorageService {
 
   // Products
   getProducts(): Product[] {
-    return this.get<Product[]>(STORAGE_KEYS.PRODUCTS, INITIAL_PRODUCTS);
+    const saved = this.get<Product[] | null>(STORAGE_KEYS.PRODUCTS, null);
+    if (!saved) return INITIAL_PRODUCTS;
+    const savedIds = new Set(saved.map((product) => product.id));
+    return [...saved, ...INITIAL_PRODUCTS.filter((product) => !savedIds.has(product.id))];
   }
 
   saveProducts(products: Product[]): void {
@@ -167,7 +170,10 @@ class StorageService {
 
   // Categories
   getCategories(): Category[] {
-    return this.get<Category[]>(STORAGE_KEYS.CATEGORIES, INITIAL_CATEGORIES);
+    const saved = this.get<Category[] | null>(STORAGE_KEYS.CATEGORIES, null);
+    if (!saved) return INITIAL_CATEGORIES;
+    const savedIds = new Set(saved.map((category) => category.id));
+    return [...saved, ...INITIAL_CATEGORIES.filter((category) => !savedIds.has(category.id))];
   }
 
   saveCategories(categories: Category[]): void {

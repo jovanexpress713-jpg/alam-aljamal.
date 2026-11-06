@@ -50,9 +50,9 @@ export const HomeView: React.FC = () => {
   const ArrowIcon = lang === 'ar' ? ArrowLeft : ArrowRight;
 
   return (
-    <div className="pb-24 sm:pb-32 space-y-10 sm:space-y-20 overflow-x-hidden alam-mobile-shell">
+    <div className="pb-24 sm:pb-32 space-y-12 sm:space-y-16 overflow-x-hidden alam-mobile-shell">
       {/* HERO BANNER SECTION */}
-      <section className="relative min-h-[66vh] sm:min-h-[78vh] flex items-center justify-center overflow-hidden px-4 sm:px-6 border-b border-[#D7AD55]/15">
+      <section className="relative min-h-[560px] sm:min-h-[680px] lg:min-h-[740px] flex items-center justify-center overflow-hidden px-4 sm:px-6 border-b border-[#D7AD55]/15">
         {/* Background Image with dramatic gradient vignette */}
         <div className="absolute inset-0 z-0">\n          <div className="alam-hero-glow top-[-8%] left-1/2 -translate-x-1/2" />
           <img
@@ -187,7 +187,7 @@ export const HomeView: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
-          {categories.map((cat) => (
+          {categories.slice(0, 6).map((cat) => (
             <button
               key={cat.id}
               onClick={() => {
@@ -199,7 +199,7 @@ export const HomeView: React.FC = () => {
               <img
                 src={cat.imageUrl}
                 alt={cat.nameAr}
-                className="absolute inset-0 w-full h-full object-cover filter brightness-[0.45] group-hover:scale-108 transition-transform duration-700"
+                loading="lazy"\n                className="absolute inset-0 w-full h-full object-cover filter brightness-[0.48] group-hover:scale-110 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-[#080808]/40 to-transparent" />
               <div className="relative z-10">
@@ -239,7 +239,7 @@ export const HomeView: React.FC = () => {
           </button>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
           {bestSellers.map((product) => (
             <ProductCard
               key={product.id}
@@ -402,7 +402,7 @@ export const ProductCard: React.FC<{
   return (
     <article className="luxury-card group rounded-2xl overflow-hidden flex flex-col justify-between border border-[#D7AD55]/15 hover:border-[#D7AD55]/50 transition-all bg-[#121212]">
       {/* Top Media Container */}
-      <div className="relative aspect-square w-full overflow-hidden bg-[#181818] cursor-pointer" onClick={onSelect}>
+      <div className="relative aspect-[4/5] w-full overflow-hidden bg-[#181818] cursor-pointer" onClick={onSelect}>
         <img
           src={product.images[0]}
           alt={lang === 'ar' ? product.nameAr : product.nameEn}

@@ -31,19 +31,19 @@ export const CheckoutView: React.FC = () => {
     notify
   } = useStore();
 
-  const [customerName, setCustomerName] = useState(user?.fullName || 'سمو العميل الراقي');
-  const [customerPhone, setCustomerPhone] = useState(user?.phone || '+966 50 123 4567');
-  const [customerEmail, setCustomerEmail] = useState(user?.email || 'client@alamaljamal.luxury');
+  const [customerName, setCustomerName] = useState(user?.fullName || '');
+  const [customerPhone, setCustomerPhone] = useState(user?.phone || '');
+  const [customerEmail, setCustomerEmail] = useState(user?.email || '');
   const [selectedAddressId, setSelectedAddressId] = useState(addresses[0]?.id || 'custom');
   
   // Custom address fields if user enters new address
-  const [city, setCity] = useState('الرياض');
-  const [region, setRegion] = useState('حي حطين الفاخر');
-  const [street, setStreet] = useState('شارع الأمير تركي بن عبدالعزيز');
-  const [buildingNo, setBuildingNo] = useState('فيلا 12');
-  const [customerNote, setCustomerNote] = useState('يرجى تغليف العطور بالعلبة الملكية وشريط الذهب الخاص بالإهداء');
+  const [city, setCity] = useState('');
+  const [region, setRegion] = useState('');
+  const [street, setStreet] = useState('');
+  const [buildingNo, setBuildingNo] = useState('');
+  const [customerNote, setCustomerNote] = useState('');
 
-  const [paymentMethod, setPaymentMethod] = useState<PaymentMethod>('apple_pay');
+  const [paymentMethod, setPaymentMethod] = useState<PaymentMethod>('cash_on_delivery');
   const [deliverySpeed, setDeliverySpeed] = useState<'standard' | 'vip_same_day'>('vip_same_day');
   const [isSubmitting, setIsSubmitting] = useState(false);
 

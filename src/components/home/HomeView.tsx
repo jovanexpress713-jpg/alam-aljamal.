@@ -50,11 +50,12 @@ export const HomeView: React.FC = () => {
   const ArrowIcon = lang === 'ar' ? ArrowLeft : ArrowRight;
 
   return (
-    <div className="pb-24 sm:pb-32 space-y-12 sm:space-y-20 overflow-x-hidden">
+    <div className="pb-24 sm:pb-32 space-y-12 sm:space-y-16 overflow-x-hidden alam-mobile-shell">
       {/* HERO BANNER SECTION */}
-      <section className="relative min-h-[80vh] sm:min-h-[85vh] flex items-center justify-center overflow-hidden px-4 sm:px-6">
+      <section className="relative min-h-[560px] sm:min-h-[680px] lg:min-h-[740px] flex items-center justify-center overflow-hidden px-4 sm:px-6 border-b border-[#D7AD55]/15">
         {/* Background Image with dramatic gradient vignette */}
         <div className="absolute inset-0 z-0">
+          <div className="alam-hero-glow top-[-8%] left-1/2 -translate-x-1/2" />
           <img
             src="https://images.unsplash.com/photo-1594035910387-fea47794261f?w=1800&q=90"
             alt="عالم الجمال الفاخر"
@@ -123,23 +124,23 @@ export const HomeView: React.FC = () => {
           {[
             {
               icon: Award,
-              title: t('أصالة ملكية 100%', '100% Authentic'),
-              desc: t('جميع المنتجات أصلية مع شهادات ضمان', 'Direct from authentic European ateliers')
+              title: t('اختيارات متنوعة', 'Curated Selection'),
+              desc: t('تشكيلة واسعة تناسب اهتمامات مختلفة', 'A considered range for different interests')
             },
             {
               icon: Truck,
-              title: t('توصيل أسطول VIP', 'VIP White Glove Delivery'),
-              desc: t('شحن سريع خلال 24 ساعة بعناية تامة', 'Express temperature-controlled dispatch')
+              title: t('تصفح مريح', 'Effortless Browsing'),
+              desc: t('انتقل بسهولة بين الأقسام والمنتجات', 'Move easily between categories and products')
             },
             {
               icon: ShieldCheck,
-              title: t('الضمان الذهبي', 'Golden Guarantee'),
-              desc: t('استرجاع واستبدال فوري بكل مرونة', 'Hassle-free luxury exchange policy')
+              title: t('تفاصيل المنتج', 'Product Details'),
+              desc: t('صور ومعلومات وأسعار في مكان واحد', 'Images, information and pricing in one place')
             },
             {
               icon: RotateCcw,
-              title: t('تغليف إهداء راقٍ', 'Luxury Gift Presentation'),
-              desc: t('صناديق مبطنة بالحرير وشريط مذهب', 'Bespoke silk-lined boxes with wax seal')
+              title: t('قائمة المفضلة', 'Your Wishlist'),
+              desc: t('احفظ المنتجات التي ترغب بالعودة إليها', 'Save products you would like to revisit')
             }
           ].map((item, idx) => {
             const Icon = item.icon;
@@ -187,19 +188,20 @@ export const HomeView: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
-          {categories.map((cat) => (
+          {categories.slice(0, 6).map((cat) => (
             <button
               key={cat.id}
               onClick={() => {
                 setSelectedCategory(cat.id);
                 setCurrentTab('products');
               }}
-              className="group relative h-40 sm:h-48 rounded-2xl overflow-hidden border border-[#D7AD55]/20 hover:border-[#D7AD55] transition-all text-start flex flex-col justify-end p-3 sm:p-4 text-white"
+              className="alam-category-card group relative h-36 sm:h-48 rounded-2xl overflow-hidden border border-[#D7AD55]/25 hover:border-[#F4D98E] transition-all text-start flex flex-col justify-end p-3 sm:p-4 text-white bg-[#111]"
             >
               <img
                 src={cat.imageUrl}
                 alt={cat.nameAr}
-                className="absolute inset-0 w-full h-full object-cover filter brightness-[0.45] group-hover:scale-108 transition-transform duration-700"
+                loading="lazy"
+                className="absolute inset-0 w-full h-full object-cover filter brightness-[0.48] group-hover:scale-110 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-[#080808]/40 to-transparent" />
               <div className="relative z-10">
@@ -239,7 +241,7 @@ export const HomeView: React.FC = () => {
           </button>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
           {bestSellers.map((product) => (
             <ProductCard
               key={product.id}
@@ -402,7 +404,7 @@ export const ProductCard: React.FC<{
   return (
     <article className="luxury-card group rounded-2xl overflow-hidden flex flex-col justify-between border border-[#D7AD55]/15 hover:border-[#D7AD55]/50 transition-all bg-[#121212]">
       {/* Top Media Container */}
-      <div className="relative aspect-square w-full overflow-hidden bg-[#181818] cursor-pointer" onClick={onSelect}>
+      <div className="relative aspect-[4/5] w-full overflow-hidden bg-[#181818] cursor-pointer" onClick={onSelect}>
         <img
           src={product.images[0]}
           alt={lang === 'ar' ? product.nameAr : product.nameEn}

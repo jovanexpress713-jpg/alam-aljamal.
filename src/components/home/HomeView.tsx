@@ -54,7 +54,8 @@ export const HomeView: React.FC = () => {
       {/* HERO BANNER SECTION */}
       <section className="relative min-h-[560px] sm:min-h-[680px] lg:min-h-[740px] flex items-center justify-center overflow-hidden px-4 sm:px-6 border-b border-[#D7AD55]/15">
         {/* Background Image with dramatic gradient vignette */}
-        <div className="absolute inset-0 z-0">\n          <div className="alam-hero-glow top-[-8%] left-1/2 -translate-x-1/2" />
+        <div className="absolute inset-0 z-0">
+          <div className="alam-hero-glow top-[-8%] left-1/2 -translate-x-1/2" />
           <img
             src="https://images.unsplash.com/photo-1594035910387-fea47794261f?w=1800&q=90"
             alt="عالم الجمال الفاخر"
@@ -199,7 +200,8 @@ export const HomeView: React.FC = () => {
               <img
                 src={cat.imageUrl}
                 alt={cat.nameAr}
-                loading="lazy"\n                className="absolute inset-0 w-full h-full object-cover filter brightness-[0.48] group-hover:scale-110 transition-transform duration-700"
+                loading="lazy"
+                className="absolute inset-0 w-full h-full object-cover filter brightness-[0.48] group-hover:scale-110 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-[#080808]/40 to-transparent" />
               <div className="relative z-10">
